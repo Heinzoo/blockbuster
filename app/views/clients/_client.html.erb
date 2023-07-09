@@ -1,0 +1,29 @@
+<div id="<%= dom_id client %>">
+  <tr class="text-center">
+    <th scope="row"><%= client.id %></th>
+    <td><%= client.name %></td>
+    <td><%= client.age %></td>
+    <td><%= client.movies.last %></td>
+    <td>
+      <% if action_name == 'index' %>
+        <%= link_to client do %>
+          <i class="bi bi-eye-fill text-primary fs-5"></i>
+        <% end %>
+      <% else %>
+        <%= link_to clients_path do %>
+          <i class="bi bi-arrow-return-left text-secondary fs-5"></i>
+        <% end %> 
+      <% end %>
+    </td>
+    <td>
+      <%= link_to edit_client_path(client) do %>
+        <i class="bi bi-pencil-fill text-success fs-5"></i>
+      <% end %>
+    </td>
+    <td>
+      <%= button_to client_path(client.id), method: :delete, style: "all: unset; cursor: pointer" do %>
+        <i class="bi bi-trash-fill text-danger fs-5"></i>
+      <% end %>
+    </td>
+  </tr>
+</div>

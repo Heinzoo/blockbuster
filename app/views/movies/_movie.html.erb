@@ -1,0 +1,29 @@
+
+  <div class="col-4 py-2">
+    <div class="card">
+      <div class="card-body">
+        <div class="d-flex justify-content-between align-items-center m-3">
+          <h5 class="card-title">
+            #<%= movie.id %>. <%= movie.name %>
+          </h5>
+          <% if action_name == 'index' %>
+            <%= link_to movie do %>
+              <i class="bi bi-eye-fill text-primary fs-5"></i>
+            <% end %>
+          <% else %>
+            <div class="d-flex">
+              <%= link_to movies_path do %>
+                <i class="bi bi-arrow-return-left text-secondary fs-5 px-1"></i>
+              <% end %>
+              <%= link_to edit_movie_path(movie) do %>
+                <i class="bi bi-pencil-fill text-success fs-5 px-1"></i>
+              <% end %>
+              <%= button_to @movie, method: :delete, style: "all: unset; cursor: pointer" do %>
+                <i class="bi bi-trash-fill text-danger fs-5 px-1"></i>
+              <% end %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>

@@ -1,0 +1,43 @@
+<%= form_with(model: client) do |form| %>
+  <% if client.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(client.errors.count, "error") %> prohibited this client from being saved:</h2>
+
+      <ul>
+        <% client.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="row row-cols-auto align-items-center mb-3"> 
+    <div class="col-6">
+      <div class="input-group">
+        <%= form.label :name, "Nombre", class: "input-group-text" %>
+        <%= form.text_field :name, placeholder: "Nombre", class: "form-control" %>
+      </div>
+    </div>
+
+    <div class="col-3">
+      <div class="input-group">
+        <%= form.label :age, "Edad", class: "input-group-text" %>
+        <%= form.text_field :age, placeholder: "Edad", class: "form-control" %>
+      </div>
+    </div>
+
+    <div class="col-1 px-0" style="width: 35px">
+      <%= link_to clients_path do %>
+        <i class="bi bi-arrow-return-left text-secondary fs-5"></i>
+      <% end %>
+    </div>
+
+    <div class="col-2 px-0">
+      <% if action_name == "new" %>
+        <%= form.submit "Guardar", class: "btn btn-success rounded-pill fw-semibold text-white" %>
+      <% else %>
+        <%= form.submit "Actualizar", class: "btn btn-success rounded-pill fw-semibold text-white" %>
+      <% end %>
+    </div>
+  </div>
+<% end %>

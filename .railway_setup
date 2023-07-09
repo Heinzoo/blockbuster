@@ -1,0 +1,9 @@
+{
+  "RAILS_ENV": "production",
+  "SECRET_KEY_BASE": "rake secret",
+  "DB_USER": "postgres",
+  "DB_PASSWORD": "dfXSCOXIPGPlG02P0Ynp",
+  "DB_HOST": "containers-us-west-42.railway.app",
+  "DB_PORT": 7674,
+  "DB_NAME": "railway"
+}

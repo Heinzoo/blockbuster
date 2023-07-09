@@ -1,0 +1,34 @@
+<div class="toast align-items-center text-bg-success" role="alert" aria-live="assertive" aria-atomic="true">
+  <div class="d-flex">
+    <div class="toast-body">
+      <%= notice %>
+    </div>
+    <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+  </div>
+</div>
+
+<div class="container">
+  <div class="d-flex justify-content-between align-items-center my-3">
+    <h1>Clientes</h1>
+    <%= link_to "Nuevo Ciente", new_client_path, class: "btn btn-outline-success" %>
+  </div>
+
+  <div id="clients">
+    <table class="table table-bordered">
+      <thead>
+        <tr class="text-center">
+          <th scope="col">#</th>
+          <th scope="col">Nombre</th>
+          <th scope="col">Edad</th>
+          <th scope="col">Pelicula</th>
+          <th scope="col" colspan="3"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @clients.each do |client| %>
+          <%= render client %>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
